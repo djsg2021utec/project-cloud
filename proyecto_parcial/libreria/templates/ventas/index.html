@@ -1,15 +1,15 @@
 {% extends "base.html" %}
 
-{% block titulo %} Lista de Productos {% endblock%}
+{% block titulo %} Lista de Ventas {% endblock%}
 
 {% block contenido %}
  
 <div class="card">
     <div class="card-header">
-        <a name="" id="" class="btn btn-success" href="{% url 'crear_producto' %}" role="button">Agregar producto</a>
+        <a name="" id="" class="btn btn-success" href="{% url 'crear_venta' %}" role="button">Agregar Venta</a>
     </div>
     <div class="card-body">
-        <h4 class="card-title">Almacen</h4>
+        <h4 class="card-title">Ventas</h4>
 
         <div class="table-responsive">
             <table class="table table-primary">
@@ -19,26 +19,29 @@
                         <th>Nombre del Producto</th>
                         <th>Marca</th>
                         <th>Unidades</th>
-                        <th>Compra</th>
-                        <th>Venta</th>
+                        <th>Nombre del Cliente</th>
+                        <th>Apellidos del Cliente</th>
+                        <th>DNI</th>
+                        <th>Total Venta</th>
                         <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {% for p in Productos %}
+                    {% for v in Regventas %}
                     <tr>
-                        <td>{{ p.0 }}</td>
-                        <td>{{ p.1 }}</td>
-                        <td>{{ p.2 }}</td>
-                        <td>{{ p.3 }}</td>
-                        <td>{{ p.4 }}</td>
-                        <td>{{ p.5 }}</td>
+                        <td>{{ v.0 }}</td>
+                        <td>{{ v.1 }}</td>
+                        <td>{{ v.2 }}</td>
+                        <td>{{ v.3 }}</td>
+                        <td>{{ v.4 }}</td>
+                        <td>{{ v.5 }}</td>
+                        <td>{{ v.6 }}</td>
+                        <td>{{ v.7 }}</td>
                         <td>
-                            <a href='/almacen/{{ p.0 }}/borrar'>Borrar</a>
+                            <a href='/ventas/{{ v.0 }}/borrar'>Borrar</a>
                         </td>
                     </tr>
                     {% endfor %}
-
                 </tbody>
             </table>
         </div>
